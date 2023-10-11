@@ -1,4 +1,8 @@
 
+<!-- ![Alt text](/posts/path/to/img.jpg "Optional title") -->
+![home](./readme%20images/1.png "Home Page")
+![new](./readme%20images/2.png "New  Page")
+![update](./readme%20images/3.png "Edit Page")
 # Tailwind Integration guide
 
 ### install & initialization tailwind css
@@ -35,3 +39,4 @@ module.exports = {
 ```bash
 npx tailwindcss -i ./input.css -o ./style.css --watch
 ```
+
