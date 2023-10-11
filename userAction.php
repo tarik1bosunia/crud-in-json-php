@@ -16,7 +16,8 @@ if (isset($_POST['bookSubmit'])) {
     $author = trim(strip_tags($_POST['author']));
     $pages = trim(strip_tags($_POST['pages']));
     $available = trim(strip_tags($_POST['available']));
-
+    $available = $available == "yes" ? 1 : 0;
+    var_dump($available);
     $id_str = '';
     if (!empty($id)) {
         $id_str = '?id=' . $id;
@@ -29,13 +30,13 @@ if (isset($_POST['bookSubmit'])) {
     if (empty($title)) {
         $errorMsg .= '<p>Please enter book title.</p>';
     }
-    if (empty($author) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (empty($author)) {
         $errorMsg .= '<p>Please enter author name.</p>';
     }
     if (empty($pages)) {
         $errorMsg .= '<p>Please enter number of pages of this books</p>';
     }
-    if (empty($available)) {
+    if (!isset($available)) {
         $errorMsg .= '<p>Please enter abailablity</p>';
     }
 
@@ -61,8 +62,8 @@ if (isset($_POST['bookSubmit'])) {
                 // Remove submitted fields value from session
                 unset($sessionData['bookData']);
             } else {
-                $sessData['status']['type'] = 'error';
-                $sessData['status']['msg'] = 'Some problem occurred, please try again.';
+                $sessionData['status']['type'] = 'error';
+                $sessionData['status']['msg'] = 'Some problem occurred, please try again.';
 
                 // Set redirect url 
                 $redirectURL = 'addEdit.php' . $id_str;
@@ -86,8 +87,8 @@ if (isset($_POST['bookSubmit'])) {
             }
         }
     }else{ 
-        $sessData['status']['type'] = 'error'; 
-        $sessData['status']['msg'] = '<p>Please fill all the mandatory fields.</p>'.$errorMsg; 
+        $sessionData['status']['type'] = 'error'; 
+        $sessionData['status']['msg'] = '<p>Please fill all the mandatory fields.</p>'.$errorMsg; 
          
         // Set redirect url 
         $redirectURL = 'addEdit.php'.$id_str; 
@@ -105,7 +106,7 @@ if (isset($_POST['bookSubmit'])) {
             $sessionData['status']['msg'] = 'Book data has been deleted successfully.'; 
         }else{ 
             $sessionData['status']['type'] = 'error'; 
-            $sessData['status']['msg'] = 'Some problem occurred, please try again.'; 
+            $sessionData['status']['msg'] = 'Some problem occurred, please try again.'; 
         } 
          
         // Store status into the session 
@@ -115,5 +116,3 @@ if (isset($_POST['bookSubmit'])) {
 // Redirect to the respective page 
 header("Location:".$redirectURL); 
 exit();
-
-?>

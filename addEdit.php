@@ -90,12 +90,12 @@ elseif(!empty($statusMsg) && ($statusMsgType == 'error')){ ?>
     </div>
     <div class="md:w-2/3">
         
-    <input type="checkbox" checked="<?php echo !empty($bookData['available'])?$bookData['available']:''; ?>"  class="mr-2 leading-tight">
+    <input type="checkbox" name="available" value="yes"  <?php echo !empty($bookData['available']) && $bookData['available'] ? 'checked' :''; ?>  class="mr-2 leading-tight">
     </div>
   </div>
 
 
-  <input type="hidden" name="id" value="<?php echo !empty($bookData['isbn'])?$memberData['isbn']:''; ?>">
+  <input type="hidden" name="id" value="<?php echo !empty($memberData['isbn'])?$memberData['isbn']:''; ?>">
 
   <div class="md:flex md:items-center">
     <div class="md:w-1/3"></div>

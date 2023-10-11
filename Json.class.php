@@ -45,7 +45,7 @@ class Json
             } else {
                 $data[] = $newData;
             }
-            $insert = file_put_contents($this->jsonFile, json_decode($data));
+            $insert = file_put_contents($this->jsonFile, json_encode($data));
             
             return $insert ? $id : false;
         } else {
@@ -63,7 +63,7 @@ class Json
             $data = json_decode($jsonData, true);
 
             foreach ($data as $key => $value) {
-                if($value['id'] == $id){
+                if($value['isbn'] == $id){
                     if(isset($upatedData['title'])){
                         $data[$key]['title'] = $upatedData['title'];
                     }
@@ -78,7 +78,7 @@ class Json
                     }
                 }
             }
-            $update = file_put_contents($this->jsonFile, json_decode($data));
+            $update = file_put_contents($this->jsonFile, json_encode($data));
             return $update ? true : false;
         }else{
             return false;
