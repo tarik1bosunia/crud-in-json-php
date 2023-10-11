@@ -31,6 +31,12 @@ if(!empty($sessionData['status']['msg'])){
 }
 
 ?>
+
+
+<div class="flex flex-col items-center">
+    <h5 class="font-bold text-5xl py-10">Books</h5>
+</div>
+
 <!-- display status message -->
 <?php  
 if(!empty($statusMsg) && ($statusMsgType == 'success')){ ?>
@@ -45,10 +51,6 @@ elseif(!empty($statusMsg) && ($statusMsgType == 'error')){ ?>
     </div>
 
 <?php } ?>
-
-<div class="flex flex-col items-center">
-    <h5 class="font-bold text-5xl py-10">Books</h5>
-</div>
 
 <!-- Add New Book link -->
 <div class="flex justify-end m-4">

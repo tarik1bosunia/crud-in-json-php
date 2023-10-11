@@ -24,7 +24,7 @@ class Json
         $jsonData = file_get_contents($this->jsonFile);
         $data = json_decode($jsonData, true);
         $singleData = array_filter($data, function ($var) use ($id) {
-            return (!empty($var['isbn']) && $var['id'] == $id);
+            return (!empty($var['isbn']) && $var['isbn'] == $id);
         });
         $singleData = array_values($singleData)[0];
         return !empty($singleData) ? $singleData : false;
@@ -45,8 +45,8 @@ class Json
             } else {
                 $data[] = $newData;
             }
-            $insert = file_put_contents($this->jsonFile, json_encode($data));
-
+            $insert = file_put_contents($this->jsonFile, json_decode($data));
+            
             return $insert ? $id : false;
         } else {
             return false;
@@ -55,8 +55,10 @@ class Json
 
     public function update($upatedData, $id): bool
     {
-        if (!empty($upatedData) && is_array($upatedData) && !empty($id)) {
+        
 
+        if (!empty($upatedData) && is_array($upatedData) && !empty($id)) {
+            
             $jsonData = file_get_contents($this->jsonFile);
             $data = json_decode($jsonData, true);
 
@@ -76,7 +78,7 @@ class Json
                     }
                 }
             }
-            $update = file_put_contents($this->jsonFile, json_encode($data));
+            $update = file_put_contents($this->jsonFile, json_decode($data));
             return $update ? true : false;
         }else{
             return false;
@@ -87,10 +89,10 @@ class Json
         $data = json_decode($jsonData, true); 
 
         $newData = array_filter($data, function ($var) use ($id){
-            return ($var['id'] != $id); 
+            return ($var['isbn'] != $id); 
         });
 
-        $delete = file_put_contents($this->jsonFile, json_decode($data));
+        $delete = file_put_contents($this->jsonFile, json_encode($newData));
         
         return $delete ? true : false;
     }
