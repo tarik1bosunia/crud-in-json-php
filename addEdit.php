@@ -30,7 +30,7 @@ if(!empty($sessionData['status']['msg'])){
 ?>
 
 <div class="flex flex-col items-center">
-    <h5 class="font-bold text-5xl py-10"><?php echo $actionLabel; ?> Books</h5>
+    <h5 class="font-bold text-5xl py-10"><?php echo $actionLabel; ?> Book</h5>
 </div>
 
 <!-- display status message -->
@@ -78,19 +78,19 @@ elseif(!empty($statusMsg) && ($statusMsgType == 'error')){ ?>
       </label>
     </div>
     <div class="md:w-2/3">
-      <input value="<?php echo !empty($bookData['pages'])?$bookData['pages']:''; ?>" required=""  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pages" name="pages" type="text">
+      <input value="<?php echo !empty($bookData['pages'])?$bookData['pages']:''; ?>" required=""  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pages" name="pages" type="number">
     </div>
   </div>
 
   <div class="md:flex md:items-center mb-6">
     <div class="md:w-1/3">
       <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="pages">
-        Is Available
+        Available
       </label>
     </div>
     <div class="md:w-2/3">
         
-    <input type="checkbox" name="available" value="yes"  <?php echo !empty($bookData['available']) && $bookData['available'] ? 'checked' :''; ?>  class="mr-2 leading-tight">
+    <input type="number" name="available" value="<?php echo !empty($bookData['available'])?$bookData['available']:''; ?>"  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
     </div>
   </div>
 

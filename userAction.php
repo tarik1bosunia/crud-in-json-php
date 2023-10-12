@@ -3,7 +3,7 @@
 session_start();
 
 // Include and initialize DB class 
-require_once 'Json.class.php';
+require_once 'Json.class.php'; # __DIR__
 $db = new Json();
 
 // Set default redirect url 
@@ -16,8 +16,6 @@ if (isset($_POST['bookSubmit'])) {
     $author = trim(strip_tags($_POST['author']));
     $pages = trim(strip_tags($_POST['pages']));
     $available = trim(strip_tags($_POST['available']));
-    $available = $available == "yes" ? 1 : 0;
-    var_dump($available);
     $id_str = '';
     if (!empty($id)) {
         $id_str = '?id=' . $id;

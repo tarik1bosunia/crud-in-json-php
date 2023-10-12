@@ -1,8 +1,11 @@
 
+# screenshots
 <!-- ![Alt text](/posts/path/to/img.jpg "Optional title") -->
-![home](./readme%20images/1.png "Home Page")
-![new](./readme%20images/2.png "New  Page")
-![update](./readme%20images/3.png "Edit Page")
+![home](./readme%20images/home.png "Home Page")
+![add new book](./readme%20images/add_book1.png "Add New Book")
+![new](./readme%20images/add_book2.png "Add New Book Page")
+![update](./readme%20images/update_book1.png "Edit Book Page")
+![update](./readme%20images/update_book2.png "Edit Book Page")
 # Tailwind Integration guide
 
 ### install & initialization tailwind css

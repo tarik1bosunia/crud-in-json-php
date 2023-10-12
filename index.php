@@ -103,13 +103,19 @@
                                         <?php echo $row['pages']; ?>
 
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <?php if($row['available'] == 1) {  ?>
+                                    <td class="px-6 py-4 ">
+                                  
+                                        <?php echo $row['available']; ?>
+                                        
+                                        <!-- <?php
+                                        
+                                        if($row['available'] >= 1) {  ?>
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="text-green-500"><path fill="currentColor" d="M28.21 2.4a3.5 3.5 0 0 1 1.344 4.763l-11.51 20.554a4 4 0 0 1-6.135 1.047L3.186 21.08a3.5 3.5 0 0 1 4.628-5.252l5.936 5.23l9.696-17.314A3.5 3.5 0 0 1 28.21 2.4Z"/></svg>
                                         <?php } else  { ?>
 
                                         <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64"><path fill="#ec1c24" d="M50.592 2.291L32 20.884C25.803 14.689 19.604 8.488 13.406 2.291c-7.17-7.17-18.284 3.948-11.12 11.12c6.199 6.193 12.4 12.395 18.592 18.592A32589.37 32589.37 0 0 1 2.286 50.595c-7.164 7.168 3.951 18.283 11.12 11.12c6.197-6.199 12.396-12.399 18.593-18.594l18.592 18.594c7.17 7.168 18.287-3.951 11.12-11.12c-6.199-6.199-12.396-12.396-18.597-18.594c6.2-6.199 12.397-12.398 18.597-18.596c7.168-7.166-3.949-18.284-11.12-11.11"/></svg>
-                                        <?php } ?>
+                                        <?php } ?> -->
                                     </td>
                                     <td class="flex justify-center items-center py-2">
                                         <a href="addEdit.php?id=<?php echo $row['isbn']; ?>" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
