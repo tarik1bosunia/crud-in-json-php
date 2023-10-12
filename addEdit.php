@@ -106,7 +106,15 @@ elseif(!empty($statusMsg) && ($statusMsgType == 'error')){ ?>
 
 </form>
 </div>
-<a href="index.php" class="btn btn-secondary">Back</a>
+<div class="flex flex-grow-0">
+
+<a href="index.php" class="flex justify-center items-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m7.825 13l5.6 5.6L12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2H7.825Z"/></svg>
+
+  Go Back
+</a>
+</div>
+
 
 
 
